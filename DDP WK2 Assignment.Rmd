@@ -1,0 +1,24 @@
+---
+title: "Leaflet with R Markdown"
+author: "Baburaj Velayudhan"
+date: "January 19, 2019"
+output: html_document
+---
+
+## R Markdown
+
+This is an R Markdown document using leaflet library to show location of The Tajmahal. The information is obtained from 
+https://www.latlong.net/place/taj-mahal-agra-uttar-pradesh-india-25.html
+
+
+```{r, echo=FALSE}
+library(leaflet)
+tmWiki <- c("<a href='https://en.wikipedia.org/wiki/Taj_Mahal'>The Tajmahal</a>")
+tm<- leaflet() %>%
+        addTiles() %>%
+        addMarkers(lat=27.173891, lng= 78.042068, 
+                   popup =tmWiki)
+tm
+
+```
+
